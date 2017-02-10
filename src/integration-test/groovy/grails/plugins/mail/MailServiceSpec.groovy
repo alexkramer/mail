@@ -565,18 +565,6 @@ class MailServiceSpec extends Specification  {
         RequestContextHolder.currentRequestAttributes().currentResponse.contentType == originalContentType
     }
 
-//    void testViewResolutionFromPlugin() {
-//        MimeMailMessage message = mimeCapableMailService.sendMail {
-//            to "fred@g2one.com"
-//            subject "Hello John"
-//            body view: '/email/email', plugin: 'for-plugin-view-resolution'
-//        }
-//
-//        message.getMimeMessage().getSubject() == "Hello John"
-//        message.mimeMessage.contentType.startsWith('text/plain') == true
-//        assertEquals 'This is from a plugin!!!', message.getMimeMessage().getContent().trim()
-//    }
-
     private List<String> to(MimeMessage msg) {
         msg.getRecipients(Message.RecipientType.TO)*.toString()
     }
