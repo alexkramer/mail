@@ -22,7 +22,7 @@ import groovy.util.logging.Commons
 
 @Commons
 class MailGrailsPlugin extends Plugin {
-    def grailsVersion = "3.0 > *"
+    def grailsVersion = "3.2.3 > *"
 
     def author = "Grails Plugin Collective"
     def authorEmail = "grails.plugin.collective@gmail.com"

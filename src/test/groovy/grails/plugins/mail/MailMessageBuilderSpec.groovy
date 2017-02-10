@@ -15,12 +15,10 @@
  */
 package grails.plugins.mail
 
-import grails.test.mixin.TestMixin
-import grails.test.mixin.support.GrailsUnitTestMixin
+import grails.test.mixin.TestFor
 import org.springframework.mail.MailSender
 import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.web.context.support.ServletContextResource
-import spock.lang.Issue
 import spock.lang.Specification
 
 import javax.mail.Message
@@ -33,7 +31,7 @@ import javax.servlet.ServletContext
 /**
  * Test case for {@link MailMessageBuilder}.
  */
-@TestMixin(GrailsUnitTestMixin)
+@TestFor(MailService)
 class MailMessageBuilderSpec extends Specification {
 
 	MailMessageBuilder testJavaMailSenderBuilder
@@ -278,7 +276,6 @@ class MailMessageBuilderSpec extends Specification {
 		thrown(FileNotFoundException)
 	}
 
-	@Issue("for issue GPMAIL-60")
 	void "test Attach Call In Beginning Of Dsl"() {
 		setup:
 		def servletContext = [getResourceAsStream: { new ByteArrayInputStream("abcdef".bytes) }] as ServletContext

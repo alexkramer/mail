@@ -2,7 +2,7 @@
 grails:
   profile: web-plugin
   codegen:
-    defaultPackage: mail
+    defaultPackage: grails.plugin.mail
 info:
     app:
         name: '@info.app.name@'
